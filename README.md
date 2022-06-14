@@ -17,45 +17,48 @@ Our Hospital Management System have the following features:
 ## System Design
 
 ### HMS Flowchart
-
-
-### GUI's
-We have used components from Swing and AWT Libraries to design the GUI.
-
-#### 1. Login GUI
-![loginGUI](https://user-images.githubusercontent.com/107078925/173621876-15a31249-4079-4f12-8963-7b8aac0baca9.jpg)
-
-Login GUI is the first GUI that user will be seeing when he/she runs the application. If the user is an employee, he/she can proceed to check the salary slip provided administrator has updated their salary. If the user is an administrator, he/she shall enter the username and password. If you want to change the password and user, you will need to change it at LoginGUI.java at following lines:
-
-`if (stradmin.equals("admin") && strpass.equals("admin")) {`
-
-'admin' is the username and password in our employee payroll management system
-
-#### 2. Admin GUI
-![Admin_GUI](https://user-images.githubusercontent.com/107078925/173625287-9f1493db-551e-4eb2-968e-841a06ed5751.jpg)
-
-Admin GUI consists of the following features:
-- Add New Employees
-- Display Employee Information
-- Salary Calculation based on Days and Rate Per Day
-
-#### 3. Salary Slip GUI
-![Salary Slip GUI](https://user-images.githubusercontent.com/107078925/173625323-59b84938-32c0-4e66-bcf9-12ba8b7e25a8.jpg)
-
-This GUI is used to display Salary to employee after user key in his/her ID in the Login GUI. It has the 'print' button that allow user to print the salary slip to PDF.
+![HMS_Flowchart](https://user-images.githubusercontent.com/107078925/173637105-00428dbc-57b0-487c-b337-77c002d07589.png)
 
 ### Database
-All the functions that used to manipulate data in the database are defined in Database.java, change the username and password in the source code to your database's username and password.
+Folders and Text Filethat are required:
 
-`this.connect_db = DriverManager.getConnection(url, "root", "password");`
+1. Patient DB
+    - Patients Record will be automatically stored here once created with the console application
+2. Departments
+    - Cardiology
+      - Dr. Grey
+      - Dr. Yang
+      - Doctor DB txt file
+    - General
+      - Dr. Mohd Kamal
+      - Dr. Ramar Omar
+      - Doctor DB txt file
+    - Geriatics
+      - Dr. Darshinee
+      - Dr. Pariathishiny
+      - Doctor DB txt file
+    - Pediatrics
+      - Dr. Hendrick Ann
+      - Dr. Ng Ling
+      - Doctor DB txt file
+    - Spine Surgery
+      - Dr. Arshad
+      - Dr. Samuel Keith
+      - Doctor DB txt file
 
-### Requirements
-In order to run this application, you will need to install MySQL and its workbench to create a database to store employees' information. You can use other method to create the database and table, but MySQL workbench is the most convienient to do so. Following picture shows the column name in the employee table.
+*Doctor DB Text File is used to store the names of the doctor in the department, and there will be patient_list txt file in each doctor's folder*
 
-![column_name](https://user-images.githubusercontent.com/107078925/173625358-01df2941-6d8a-40d4-b436-5898c797b375.png)
+  In our Console Application, we have used two data structures to store and manipulate our data before writing it to txt file which are Vector and Linked List. Vector is used in manipulating patients' data while Linked List is used in displaying Doctors' names to the user to assign to patient and check for user input. Our HMS is case sensitive when it comes to assigning Doctor to the patient as we need to tally with the folder path name.
+
+  You may add in few more departments or doctors that you want but you shall not forget to add the doctor's name into the Doctor DB txt file, else it will not be displayed to the user.
+
+### Header Files Used
+We have used mutiple header files for different purposes.
+
+- patient.h is used to declare patient class and define its methods.
+- doctor_list.h is used to declare doctor_list class and node struct for linked list.
+- application.h is used to store all the functions that required to run the application smoothly.
 
 ## :clap: Project Members
 - Bryan Keane
 - Lim Zhi Min
-- Ahmed Rafat
-- Kong Ping Hao
