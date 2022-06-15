@@ -20,7 +20,7 @@ Our Hospital Management System have the following features:
 ![HMS_Flowchart](https://user-images.githubusercontent.com/107078925/173637105-00428dbc-57b0-487c-b337-77c002d07589.png)
 
 ### Database
-Folders and Text Filethat are required:
+Folders and Text File that are required:
 
 1. Patient DB
     - Patients Record will be automatically stored here once created with the console application
